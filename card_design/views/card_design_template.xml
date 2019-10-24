@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="assets_backend" name="card design assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/card_design/static/src/less/card_design.less"/>
+            <link rel="stylesheet" href="/card_design/static/src/css/email_template.css"/>
+            <link rel="stylesheet" href="/card_design/static/src/css/boxmodel.min.css"/>
+            <link rel="stylesheet" href="/card_design/static/src/css/grapes.min.css" />
+            <script type="text/javascript" src="/card_design/static/src/js/card_design.js"></script>
+            <script type="text/javascript" src="/card_design/static/src/js/action.js"></script>
+        </xpath>
+    </template>
+
+    <template id="assets_editor" inherit_id="web_editor.assets_editor">
+        <xpath expr="script[@src='/web_editor/static/src/js/widgets.js']" position="replace">
+            <script type="text/javascript" src="/card_design/static/src/js/widgets_extended.js" />
+        </xpath>
+        <xpath expr="//link[last()]" position="after">
+            <link type="text/less"
+                rel="stylesheet"
+                href="/card_design/static/src/less/card_design.ui.less"
+            />
+            <link rel="stylesheet" href="/card_design/static/src/css/grapes.min.css" />
+            <link rel="stylesheet" href="/card_design/static/src/lib/bootstrap-colorpicker/colorpicker.less"/>
+            <script type="text/javascript" src="/card_design/static/src/lib/bootstrap-colorpicker/bootstrap-colorpicker.js"/>
+            <script type="text/javascript" src="/card_design/static/src/js/widget.js"/>
+            <script type="text/javascript" src="/card_design/static/src/js/color_picker.js"></script>
+            <script type="text/javascript" src="/card_design/static/src/js/snippet_option.js"></script>
+            <script type="text/javascript" src="/card_design/static/src/js/rte.summernote.js"></script>
+            <script type="text/javascript" src="/card_design/static/src/js/card_design_editor.js"></script>
+            <script type="text/javascript" src="/card_design/static/src/js/boxmodel.js"></script>
+            <script type="text/javascript" src="/card_design/static/src/js/card_editor.js"></script>
+            <script type="text/javascript" src="/card_design/static/src/js/barcode_editor.js"></script>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record model="ir.ui.view" id="card_design_print_wizard">
+        <field name="name">card_print_wizard</field>
+        <field name="model">card.print.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Print Card">
+                <sheet>
+                    <group>
+                        <field name="model" invisible="1" />
+                        <field name="template_id" widget="selection"/> <!-- domain="[('model_id', '=', model )]" -->
+                        <field name="position" widget="radio" options="{'horizontal': true}" />
+                        <field name="file_config" widget="radio"
+                            options="{'horizontal': true}"
+                            attrs="{'invisible': [('position', '!=', 'both')]}"/>
+                    </group>
+                    <field name="body"/>
+                </sheet>
+                <footer>
+                    <button name="print_pdf" type="object" string="Export as PDF"
+                                class="oe_highlight" icon="fa-file-pdf-o"/>
+                    <button name="print_png" type="object" string="Export Image"
+                                class="oe_highlight" icon="fa-image" style="margin-left:15px;"/>
+                    <button string="Cancel" class="btn-default"
+                            special="cancel" style="margin-left:15px;"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="card_design_export_wizard">
+        <field name="name">card_export_wizard</field>
+        <field name="model">card.export.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Enter File Name with out Extension">
+                <group>
+                    <field name="name" class="oe_inline"/>
+                </group>
+                <footer>
+                    <button string="Export" name="export"
+                            type="object" default_focus="1" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default"
+                            special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>

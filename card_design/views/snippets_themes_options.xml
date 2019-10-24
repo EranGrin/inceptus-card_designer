@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="addstyle" name="Border-Picker">
+    </template>
+
+    <template id="borderpicker" name="Border-Picker">
+        <borderpicker>
+            <div class="o_borderpicker_section" data-name="theme" data-icon-class="fa fa-square-o">
+                <button data-border="border">Dotted</button>
+                <button data-border="border">Dashed</button>
+                <button data-border="border">Solid</button>
+                <button data-border="border">Double</button>
+                <button data-border="border">Groove</button>
+            </div>
+            <div class="o_borderpicker_section" data-name="theme" data-icon-class="fa fa-square-o">
+                <button data-border="border-top">Top Dotted</button>
+                <button data-border="border-top">Top Dashed</button>
+                <button data-border="border-top">Top Solid</button>
+                <button data-border="border-top">Top Double</button>
+                <button data-border="border-top">Top Groove</button>
+            </div>
+            <div class="o_borderpicker_section" data-name="theme" data-icon-class="fa fa-square-o">
+                <button data-border="border-left">Left Dotted</button>
+                <button data-border="border-left">Left Dashed</button>
+                <button data-border="border-left">Left Solid</button>
+                <button data-border="border-left">Left Double</button>
+                <button data-border="border-left">Left Groove</button>
+            </div>
+            <div class="o_borderpicker_section" data-name="theme" data-icon-class="fa fa-square-o">
+                <button data-border="border-bottom">Bottom Dotted</button>
+                <button data-border="border-bottom">Bottom Dashed</button>
+                <button data-border="border-bottom">Bottom Solid</button>
+                <button data-border="border-bottom">Bottom Double</button>
+                <button data-border="border-bottom">Bottom Groove</button>
+            </div>
+            <div class="o_borderpicker_section" data-name="theme" data-icon-class="fa fa-square-o">
+                <button data-border="border-right">Right Dotted</button>
+                <button data-border="border-right">Right Dashed</button>
+                <button data-border="border-right">Right Solid</button>
+                <button data-border="border-right">Right Double</button>
+                <button data-border="border-right">Right Groove</button>
+            </div>
+        </borderpicker>
+    </template>
+
+    <template id="bordersizepicker" name="Border-Size-Picker">
+        <borderpicker>
+            <div class="o_borderpicker_section" data-name="theme" data-icon-class="fa fa-database">
+                <button data-border-width="width-2px">2px</button>
+                <button data-border-width="width-3px">3px</button>
+                <button data-border-width="width-4px">4px</button>
+                <button data-border-width="width-5px">5px</button>
+                <button data-border-width="width-6px">6px</button>
+            </div>
+        </borderpicker>
+    </template>
+
+    <template id="borderradiuspicker" name="Border-Radius-Picker">
+        <borderradiuspicker>
+            <div style="overflow-x: hidden;height:250px;overflow-y: scroll;" class="o_borderpicker_section" data-name="theme" data-icon-class="fa fa-database">
+                <button data-border-radius="radius-10">10%</button>
+                <button data-border-radius="radius-20">20%</button>
+                <button data-border-radius="radius-30">30%</button>
+                <button data-border-radius="radius-40">40%</button>
+                <button data-border-radius="radius-50">50%</button>
+                <button data-border-radius="radius-5px">5px</button>
+                <button data-border-radius="radius-10px">10px</button>
+                <button data-border-radius="radius-15px">15px</button>
+                <button data-border-radius="radius-20px">20px</button>
+                <button data-border-radius="radius-22px">22px</button>
+                <button data-border-radius="radius-24px">24px</button>
+                <button data-border-radius="radius-25px">25px</button>
+                <button data-border-radius="radius-30px">30px</button>
+                <button data-border-radius="radius-35px">35px</button>
+                <button data-border-radius="radius-40px">40px</button>
+                <button data-border-radius="radius-45px">45px</button>
+            </div>
+        </borderradiuspicker>
+    </template>
+
+    <template id="bordercolorpicker" name="Boder-Color-Picker">
+        <colorpicker>
+            <div
+                class="o_colorpicker_section"
+                data-name="custom_color"
+                data-icon-class="fa fa-code">
+                <input type="text" class="form-control" />
+            </div>
+        </colorpicker>
+    </template>
+
+    <template id="snippet_options">
+        <t t-call="web_editor.snippet_options"/>
+        <t t-raw="0"/>
+
+        <div data-js="width-x"
+            data-selector="img, .mv, .col_mv, td:not(.o_mail_no_resize), th, td">
+        </div>
+
+        <div data-js="table_item" data-selector="td, th, td"/>
+
+        <div data-js="table_row"
+            data-selector="tr:has(> .row), tr:has(> .col_mv)"
+            data-drop-near="tr:has(> .row), tr:has(> .col_mv)">
+        </div>
+
+        <div data-js="table_column"
+            data-selector=".col>td, .col>th"
+            data-drop-near=".col>td, .col>th">
+        </div>
+
+        <div data-js="table_column_mv"
+            data-selector=".col_mv, td, th, td"
+            data-drop-near=".col_mv, td, th, td">
+        </div>
+
+        <div data-js="content"
+            data-selector="[data-oe-field='body_html'] > div:not(.o_layout), [data-oe-field='body_html'] .oe_structure > div, .oe_snippet_body"
+            data-drop-near="[data-oe-field='body_html']:not(:has(.o_layout)) > *, .oe_structure > *"
+            data-drop-in="[data-oe-field='body_html']:not(:has(.o_layout)), .oe_structure">
+        </div>
+
+        <div data-js="resize"
+            data-selector="[data-oe-field='body_html'] > div:not(.o_layout), [data-oe-field='body_html'] .oe_structure > div">
+        </div>
+
+        <div data-js="margin-y"
+            data-selector="[data-oe-field='body_html'] > div:not(.o_layout), [data-oe-field='body_html'] .oe_structure > div, td:not(.o_mail_no_resize), th, td">
+        </div>
+
+        <div data-js="colorpicker"
+            data-selector="
+                [data-oe-field='body_html'] > div:not(.o_layout):not(.o_mail_no_colorpicker),
+                [data-oe-field='body_html'] .oe_structure > div:not(.o_mail_no_colorpicker),
+                td, th, td
+            ">
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#"><i class="fa fa-eyedropper"/>Background Color</a>
+                <ul class="dropdown-menu">
+                    <li></li>
+                </ul>
+            </li>
+        </div>
+
+        <div data-js="borderpicker"
+            data-selector="
+                [data-oe-field='body_html'] > div:not(.o_layout),
+                [data-oe-field='body_html'] .oe_structure > div,
+                td, th, td
+            ">
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#"><i class="fa fa-eyedropper"/>Border</a>
+                <ul class="dropdown-menu">
+                    <li></li>
+                </ul>
+            </li>
+        </div>
+
+        <div data-js="bordersizepicker"
+            data-selector="
+                [data-oe-field='body_html'] > div:not(.o_layout),
+                [data-oe-field='body_html'] .oe_structure > div,
+                td, th, td
+            ">
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#"><i class="fa fa-eyedropper"/>Border Size</a>
+                <ul class="dropdown-menu">
+                    <li></li>
+                </ul>
+            </li>
+        </div>
+
+        <div data-js="borderradiuspicker"
+            data-selector="
+                [data-oe-field='body_html'] > div:not(.o_layout),
+                [data-oe-field='body_html'] .oe_structure > div,
+                td, th, td
+            ">
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#"><i class="fa fa-eyedropper"/>Border Radius</a>
+                <ul class="dropdown-menu">
+                    <li></li>
+                </ul>
+            </li>
+        </div>
+
+        <div data-js="bordercolorpicker"
+            data-selector="
+                [data-oe-field='body_html'] > div:not(.o_layout),
+                [data-oe-field='body_html'] .oe_structure > div,
+                td, th, td
+            ">
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#"><i class="fa fa-eyedropper"/>Border Color</a>
+                <ul class="dropdown-menu">
+                    <li></li>
+                </ul>
+            </li>
+        </div>
+    </template>
+
+</odoo>
